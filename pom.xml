@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>CHANGE-IT-TO-YOUR-ORGID</groupId>
-	<artifactId>hello-world-TODO</artifactId>
+	<groupId>0fa7fe5f-c62d-4086-a851-38e80e1a8cb1</groupId>
+	<artifactId>hello-world-you702</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>hello-world-TODO</name>
+	<name>hello-world-you702</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,14 +32,22 @@
 					<configuration>
 						<cloudhub2Deployment>
 							<uri>https://anypoint.mulesoft.com</uri>
-							<businessGroupId>YOUR-ORG-ID</businessGroupId>
+							<businessGroupId>0fa7fe5f-c62d-4086-a851-38e80e1a8cb1</businessGroupId>
 							<environment>${environment}</environment>
 							<!-- REGION = sample is London -->
 							<target>Cloudhub-EU-West-2</target>
 							<provider>MC</provider>
 							<muleVersion>4.4.0</muleVersion>
+							
 							<!-- reads credentials from settings.xml -->
-							<server>cloudhub-deploy</server>
+							<!-- server>cloudhub-deploy</server  -->
+							
+							<!-- authentifiction via coonected app client credentials  -->
+							<connectedAppGrantType>client_credentials</connectedAppGrantType>
+                                                        <connectedAppClientId>${ap.ca.client_id}</connectedAppClientId>
+                                                        <connectedAppClientSecret>${ap.ca.client_secret}</connectedAppClientSecret>
+
+							
 							<applicationName>${project.name}-${environment}</applicationName>
 							<replicas>1</replicas>
 							<vCores>0.1</vCores>
