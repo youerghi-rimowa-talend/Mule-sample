@@ -1,2 +1,1 @@
-# Mule-sample
-formation cloudhub 2
+# Sample Project for Cloudhub 2.0 Deployment
